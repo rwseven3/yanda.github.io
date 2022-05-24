@@ -1,56 +1,88 @@
-# Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
-description: >
-  Build Jekyll site with the GitBook style.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-version:          1.0
-gitbook_version:  3.2.3
+# Site settings
+title: I am Chuan !
+name: DONGChuan
+email: dongchuan55@gmail.com
+location: Nice, France
+company: Gfi Informatique
+company_url: http://www.gfi.fr/en/
+github_url: https://github.com/DONGChuan
+description: This is personnel website of DONG Chuan
+favicon: favicon.png # Image must be in assets/images
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
-rss:              RSS
+url: http://dongchuan.github.io # the base hostname & protocol for your site
 
-toc:
-  enabled: true
-  h_min: 1
-  h_max: 3
+## Gem
+gems:
+  - jekyll-paginate
+  - jekyll-geo-pattern
+  - rouge
+  - kramdown
+  - jekyll-github-metadata
 
-# markdown render engine.
-markdown:         kramdown
+# Build settings
+markdown: kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+
+source:      .
+destination: ./_site
+
+quiet:    false
+defaults: []
+
 kramdown:
-  auto_ids:               true
-  input:                  GFM
-  math_engine:            mathjax
-  smart_quotes:           lsquo,rsquo,ldquo,rdquo
-  toc_levels:             1..6
-  syntax_highlighter:     rouge
-  syntax_highlighter_opts:
-    guess_lang:           true
+  input: GFM
+  enable_coderay: true
 
-syntax_highlighter_style: colorful
+# Disque
+disque: httpdongchuangithubio.disqus.com
 
-markdown_ext:     markdown,mkdown,mkdn,mkd,md
+# Pagination
+paginate: 10
+paginate_path: 'page:num'
 
-# Permalinks
-permalink:        /:categories/:year-:month-:day-:title:output_ext
+# Navigation
+navs:
+  -
+    href: /
+    label: Home
 
-exclude:
-  - _drafts
+  -
+    href: /open-source
+    label: Open-Source
 
-collections:
-  pages:
-    output: true
-    permalink: /:collection/:path/
+  -
+    href: /blog
+    label: Blog
 
-page_width: 800px
+  -
+    href: /bookmark
+    label: Bookmark
 
-destination:      ./_site
-incremental:      false
-regenerate:       true
+  -
+    href: /about
+    label: About
 
-plugins:
-  - jekyll-feed
-  - jemoji
+# Sidebar to show popular repo
+side_bar_repo_limit: 5 # Number of repos to show
+
+# Google Analytics
+analytics :
+  provider : google
+  google :
+      tracking_id : 'UA-72165600-1'
+
+
+# For about.html. Fell free to create your own!
+skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
+skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
+skill_mobile_app_keywords: [Android, Sketch UI Desgin]
